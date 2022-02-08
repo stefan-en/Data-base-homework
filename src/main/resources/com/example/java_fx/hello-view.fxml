@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="747.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.java_fx.HelloController">
+   <children>
+      <TabPane layoutY="42.0" prefHeight="698.0" prefWidth="993.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="42.0">
+        <tabs>
+          <Tab text="Autovehicule">
+               <content>
+                  <AnchorPane prefHeight="679.0" prefWidth="1003.0">
+                     <children>
+                        <TableView fx:id="table" layoutY="-43.0" onMouseClicked="#getSelectedAutovehicul" prefHeight="680.0" prefWidth="1000.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="DenumireAutovehicul" prefWidth="171.0" text="Denumire Autovehicul" />
+                            <TableColumn fx:id="MentenantaAuto" minWidth="2.0" prefWidth="96.0" text="Mentenanta(%)" />
+                              <TableColumn fx:id="Rezervor" prefWidth="89.0" text="Rezervor(l)" />
+                              <TableColumn prefWidth="198.0" text="Putere">
+                                 <columns>
+                                    <TableColumn fx:id="cp_nominali" prefWidth="75.0" text="Nominala" />
+                                    <TableColumn fx:id="cp_maxim" prefWidth="75.0" text="Maxima" />
+                                 </columns>
+                              </TableColumn>
+                              <TableColumn fx:id="anulFabricatiei" prefWidth="115.0" text="Anul fabricatiei" />
+                              <TableColumn fx:id="anulAchizitiei" prefWidth="149.0" text="Anul achizitiei" />
+                              <TableColumn fx:id="id_auto" prefWidth="75.0" text="id_auto" />
+                              <TableColumn fx:id="id_sofer" prefWidth="75.0" text="id_sofer" />
+                          </columns>
+                        </TableView>
+                        <AnchorPane layoutX="772.0" layoutY="1.0" prefHeight="816.0" prefWidth="228.0" style="-fx-background-color: grey;">
+                           <children>
+                              <Button layoutX="54.0" layoutY="482.0" mnemonicParsing="false" onAction="#Add_Autovehicul" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: green;" text="Add" />
+                              <Button layoutX="54.0" layoutY="620.0" mnemonicParsing="false" onMouseClicked="#deleteAutovehicul" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: red;" text="Delete" />
+                              <Button layoutX="54.0" layoutY="550.0" mnemonicParsing="false" onMouseClicked="#updateAutovehicul" onMouseEntered="#updateAutovehicul" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: orange;" text="Update" />
+                              <TextField fx:id="txt_denumireA" layoutX="33.0" layoutY="48.0" promptText="Denumire" />
+                              <TextField fx:id="txt_mentenantaA" layoutX="33.0" layoutY="99.0" promptText="Mentenanta" />
+                              <TextField fx:id="txt_rezervor" layoutX="33.0" layoutY="172.0" promptText="Rezervor" />
+                              <TextField fx:id="txt_nominala" layoutX="33.0" layoutY="243.0" promptText="Putere-&gt;Nominala" />
+                              <TextField fx:id="txt_maxima" layoutX="33.0" layoutY="280.0" promptText="Putere-&gt;Maxima" />
+                              <TextField fx:id="txt_anAuto" layoutX="33.0" layoutY="371.0" promptText="Anul fabricatiei" />
+                              <TextField fx:id="txt_anAchizitieAuto" layoutX="33.0" layoutY="420.0" promptText="Anul achizitiei" />
+                              <TextField fx:id="txt_id_angajat" layoutX="33.0" layoutY="338.0" promptText="ID Angajat" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+          <Tab text="Utilaje">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="table2" layoutX="6.0" onMouseClicked="#getSelectedUtilaj" prefHeight="682.0" prefWidth="1068.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="DenumireUtilaj" prefWidth="147.0" text="Denumire utilaj" />
+                              <TableColumn fx:id="PutereMinima" prefWidth="93.0" text="Putere minima" />
+                            <TableColumn fx:id="MentenentaUtilaj" prefWidth="104.0" text="Mentenanta(%)" />
+                              <TableColumn fx:id="UsedFor" prefWidth="128.0" text="Lucrari" />
+                              <TableColumn fx:id="Viteza" prefWidth="132.0" text="Viteza de lucru(km/h)" />
+                              <TableColumn fx:id="AnulAchizitiei" prefWidth="107.0" text="Anul Achizitiei" />
+                              <TableColumn fx:id="AnulFabricatiei" prefWidth="117.0" text="Anul fabricatiei" />
+                              <TableColumn fx:id="id_utilaj" prefWidth="91.0" text="id_utilaj" />
+                          </columns>
+                        </TableView>
+                        <AnchorPane layoutX="822.0" layoutY="1.0" prefHeight="715.0" prefWidth="169.0" style="-fx-background-color: grey;">
+                           <children>
+                              <Button layoutX="40.0" layoutY="477.0" mnemonicParsing="false" onMouseClicked="#Add_Utilaj" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: green;" text="Add" />
+                              <Button layoutX="40.0" layoutY="602.0" mnemonicParsing="false" onMouseClicked="#deleteUtilaj" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: red;" text="Delete" />
+                              <Button layoutX="40.0" layoutY="537.0" mnemonicParsing="false" onMouseClicked="#updateUtilaj" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: orange;" text="Update" />
+                              <TextField fx:id="txt_denumireU" layoutX="26.0" layoutY="81.0" promptText="Denumire Utilaj" />
+                              <TextField fx:id="txt_mentenantaU" layoutX="24.0" layoutY="205.0" prefHeight="25.0" prefWidth="145.0" promptText="Mentenanta" />
+                              <TextField fx:id="txt_lucrari" layoutX="20.0" layoutY="259.0" promptText="Lucrari" />
+                              <TextField fx:id="txt_viteza" layoutX="21.0" layoutY="305.0" prefHeight="25.0" prefWidth="146.0" promptText="Viteza" />
+                              <TextField fx:id="txt_anAchizitieU" layoutX="19.0" layoutY="366.0" promptText="Anul Achizitiei" />
+                              <TextField fx:id="txt_AnulFabricatiei" layoutX="19.0" layoutY="422.0" promptText="Anul Fabricatiei" />
+                              <TextField fx:id="txt_putereMinima" layoutX="22.0" layoutY="144.0" promptText="Putere minima" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Terenuri">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="table3" layoutX="6.0" onMouseClicked="#getSelectedTeren" prefHeight="681.0" prefWidth="1075.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                          <columns>
+                              <TableColumn fx:id="Denumire" prefWidth="81.0" text="Denumire" />
+                            <TableColumn fx:id="SuprafataAgricola" prefWidth="135.0" text="Suprafata agricola(ha)" />
+                            <TableColumn fx:id="Cultura" minWidth="0.0" prefWidth="111.0" text="Cultura cultivata" />
+                              <TableColumn fx:id="Stagiu" prefWidth="122.0" text="Stadiu cultura" />
+                              <TableColumn fx:id="FertilizareLevel" prefWidth="111.0" text="Stadiu fertilizare" />
+                              <TableColumn fx:id="RecoltaPrecedenta" prefWidth="139.0" text="Recolta precedenta(t)" />
+                              <TableColumn fx:id="ProfitPerRecolta" prefWidth="114.0" text="Profit (lei)" />
+                              <TableColumn fx:id="id_teren" prefWidth="75.0" text="id_teren" />
+                          </columns>
+                        </TableView>
+                        <AnchorPane layoutX="813.0" layoutY="-2.0" prefHeight="713.0" prefWidth="197.0" style="-fx-background-color: grey;">
+                           <children>
+                              <Button layoutX="36.0" layoutY="482.0" mnemonicParsing="false" onMouseClicked="#Add_Teren" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: green;" text="Add" />
+                              <Button layoutX="36.0" layoutY="618.0" mnemonicParsing="false" onMouseClicked="#deleteTeren" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: red;" text="Delete" />
+                              <Button layoutX="36.0" layoutY="550.0" mnemonicParsing="false" onMouseClicked="#updateTeren" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: orange;" text="Update" />
+                              <TextField fx:id="txt_suprafata" layoutX="16.0" layoutY="123.0" promptText="Suprafata" />
+                              <TextField fx:id="txt_cultura" layoutX="16.0" layoutY="180.0" promptText="Cultura" />
+                              <TextField fx:id="txt_stadiu" layoutX="16.0" layoutY="252.0" promptText="Stadiu" />
+                              <TextField fx:id="txt_fertilizare" layoutX="16.0" layoutY="313.0" promptText="Fertilizare" />
+                              <TextField fx:id="txt_recolta" layoutX="24.0" layoutY="371.0" promptText="Recolta precedenta" />
+                              <TextField fx:id="txt_profit" layoutX="24.0" layoutY="426.0" promptText="Profit" />
+                              <TextField fx:id="txt_denumire_teren" layoutX="16.0" layoutY="70.0" promptText="Denumire Teren" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Angajati">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="table4" layoutY="-1.0" onMouseClicked="#getSelectedAngajat" prefHeight="680.0" prefWidth="1068.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                          <columns>
+                              <TableColumn prefWidth="299.0" text="Detalii">
+                                 <columns>
+                                    <TableColumn fx:id="Nume" prefWidth="75.0" text="Nume" />
+                                    <TableColumn fx:id="DataNasterii" prefWidth="85.0" text="Data nasterii" />
+                                    <TableColumn fx:id="DataAngajarii" prefWidth="87.0" text="Data angajarii" />
+                                    <TableColumn fx:id="RolFerma" prefWidth="53.0" text="Rol" />
+                                 </columns>
+                              </TableColumn>
+                              <TableColumn fx:id="CNP" prefWidth="124.0" text="CNP" />
+                              <TableColumn fx:id="OreLucrate" prefWidth="75.0" text="Worktime" />
+                              <TableColumn fx:id="Salariu" prefWidth="75.0" text="Salariu" />
+                              <TableColumn fx:id="Categorii" prefWidth="121.0" text="Categorii permis" />
+                              <TableColumn fx:id="id_angajat" prefWidth="75.0" text="id_angajat" />
+                          </columns>
+                        </TableView>
+                        <AnchorPane layoutX="694.0" layoutY="-2.0" prefHeight="740.0" prefWidth="316.0" style="-fx-background-color: grey;">
+                           <children>
+                              <Button layoutX="124.0" layoutY="481.0" mnemonicParsing="false" onMouseClicked="#Add_Angajat" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: green;" text="Add" />
+                              <Button layoutX="124.0" layoutY="616.0" mnemonicParsing="false" onMouseClicked="#deleteAngajat" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: red;" text="Delete" />
+                              <Button layoutX="124.0" layoutY="549.0" mnemonicParsing="false" onMouseClicked="#updateAngajat" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: orange;" text="Update" />
+                              <TextField fx:id="txt_nume" layoutX="95.0" layoutY="57.0" promptText="Nume Angajat" />
+                              <TextField fx:id="txt_data_nasterii" layoutX="95.0" layoutY="133.0" promptText="Data nasterii" />
+                              <TextField fx:id="txt_data_angajarii" layoutX="95.0" layoutY="194.0" promptText="Data angajarii" />
+                              <TextField fx:id="txt_rol" layoutX="95.0" layoutY="244.0" promptText="Rol in ferma" />
+                              <TextField fx:id="txt_time" layoutX="95.0" layoutY="345.0" promptText="Worktime" />
+                              <TextField fx:id="txt_salary" layoutX="95.0" layoutY="393.0" promptText="Salariu" />
+                              <TextField fx:id="txt_categorii" layoutX="95.0" layoutY="436.0" promptText="Categorii permis" />
+                              <TextField fx:id="txt_CNP" layoutX="95.0" layoutY="289.0" promptText="CNP" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Activitati">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="table5" layoutX="-1.0" layoutY="1.0" prefHeight="676.0" prefWidth="1028.0">
+                          <columns>
+                            <TableColumn fx:id="data_activitatii" prefWidth="162.0" text="Data activitatii" />
+                            <TableColumn fx:id="angajatulx" prefWidth="139.0" text="Angajatul" />
+                              <TableColumn fx:id="terenulx" prefWidth="156.0" text="Terenul" />
+                              <TableColumn fx:id="autovehicululx" prefWidth="155.0" text="Autovehiculul" />
+                              <TableColumn fx:id="utliajulx" prefWidth="151.0" text="Utilajul" />
+                          </columns>
+                        </TableView>
+                        <AnchorPane layoutX="765.0" layoutY="2.0" prefHeight="724.0" prefWidth="247.0" style="-fx-background-color: grey;">
+                           <children>
+                              <ChoiceBox fx:id="Angajatul" layoutX="49.0" layoutY="117.0" prefWidth="150.0" />
+                              <ChoiceBox fx:id="Terenul" layoutX="49.0" layoutY="191.0" prefWidth="150.0" />
+                              <ChoiceBox fx:id="Autovehiculul" layoutX="49.0" layoutY="261.0" prefWidth="150.0" />
+                              <ChoiceBox fx:id="Utilajul" layoutX="49.0" layoutY="325.0" prefWidth="150.0" />
+                              <TextField fx:id="txt_data_activitate" layoutX="50.0" layoutY="59.0" promptText="Data Activitatii" />
+                              <Button layoutX="71.0" layoutY="463.0" mnemonicParsing="false" onMouseClicked="#AddActivitate" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: green;" text="Add" />
+                              <Button layoutX="70.0" layoutY="543.0" mnemonicParsing="false" onMouseClicked="#deleteActivitate" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: red;" text="Delete" />
+                           </children></AnchorPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Text fontSmoothingType="LCD" layoutX="312.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Management &quot;Ferma cu leduri pe tarla&quot; " textOrigin="CENTER" AnchorPane.leftAnchor="312.0" AnchorPane.rightAnchor="312.79345703125" AnchorPane.topAnchor="6.0439453125">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
